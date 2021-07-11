@@ -5,15 +5,14 @@ import java.awt.image.BufferedImage;
 
 public class Julia extends Fractal{
 
-    public Julia(int width, int height, int threshold){
+    public Julia(int width, int height, int threshold, double colorOffset){
         super(width, height, "Julia");
         BufferedImage image = getImage();
 
-        double offset = 0.5;
+        double offset = colorOffset;
 
         for(int x = 0; x < width; x++){
             for(int y = 0; y < height; y++){
-
                 double zx = (x-(width/2.0))*4.0/width; //Real
                 double zy = (y-(height/2.0))*4.0/height; //Imaginary
                 double cx = -0.7;

@@ -5,11 +5,11 @@ import java.awt.image.BufferedImage;
 
 public class Mandelbrot extends Fractal{
 
-    public Mandelbrot(int width, int height, int threshold){
+    public Mandelbrot(int width, int height, int threshold, double colorOffset){
         super(width, height, "Mandelbrot");
         BufferedImage image = getImage();
 
-        double offset = 0.5;
+        double offset = colorOffset;
 
         for(int x = 0; x < width; x++){
             for(int y = 0; y < height; y++){
