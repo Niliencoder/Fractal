@@ -27,16 +27,14 @@ public class Mandelbrot extends Fractal{
                 }
 
                 if(k < threshold){
-                    //Zeichne außerhalb Fractal.Mandelbrot
                     double ratio = (double) k/threshold;
                     ratio = (ratio + offset)%1;
 
-                    int red = (int) (ratio*255);
-                    int blue = (int) ((1-ratio)*255);
+                    //int red = (int) (ratio*255);
+                    //int blue = (int) ((1-ratio)*255);
                     //image.setRGB(x, y, new Color(red,0,blue).getRGB());
                     image.setRGB(x ,y, Color.HSBtoRGB((float) ratio, 0.9f,1));
                 }else{
-                    //Zeichne in Fractal.Mandelbrot
                     image.setRGB(x, y, Color.BLACK.getRGB());
                 }
             }
