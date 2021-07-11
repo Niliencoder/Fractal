@@ -9,8 +9,6 @@ public class Julia extends Fractal{
         super(width, height, "Julia");
         BufferedImage image = getImage();
 
-        double offset = colorOffset;
-
         for(int x = 0; x < width; x++){
             for(int y = 0; y < height; y++){
                 double zx = (x-(width/2.0))*4.0/width; //Real
@@ -28,7 +26,7 @@ public class Julia extends Fractal{
 
                 if(k < threshold){
                     double ratio = (double) k/threshold;
-                    ratio = (ratio + offset)%1;
+                    ratio = (ratio + colorOffset)%1;
 
                     //int red = (int) (ratio*255);
                     //int blue = (int) ((1-ratio)*255);
