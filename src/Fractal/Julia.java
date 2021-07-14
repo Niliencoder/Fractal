@@ -6,8 +6,19 @@ import java.awt.image.BufferedImage;
 
 public class Julia extends Fractal{
 
+    private int width;
+    private int height;
+    private int threshold;
+    private double colorOffset;
+
     public Julia(int width, int height, int threshold, double colorOffset, double cx, double cy){
         super(width, height, "Julia");
+
+        this.width = width;
+        this.height = height;
+        this.threshold = threshold;
+        this.colorOffset = colorOffset;
+
         BufferedImage image = getImage();
 
         for(int x = 0; x < width; x++){
@@ -58,7 +69,7 @@ public class Julia extends Fractal{
         for(double i = 0; i < 2*Math.PI; i+=0.01){
             double cx = 0.7885 * Math.cos(i);
             double cy = 0.7885 * Math.sin(i);
-            label.setIcon(new ImageIcon(new Julia(1200, 1200, 200,0.5, cx, cy).getImage()));
+            label.setIcon(new ImageIcon(new Julia(width, height, threshold, colorOffset, cx, cy).getImage()));
             frame.revalidate();
             try {
                 Thread.sleep(10);
